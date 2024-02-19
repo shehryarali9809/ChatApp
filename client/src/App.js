@@ -6,7 +6,7 @@ const socket = io.connect("https://backendchatapp.vercel.app/");
 function App() {
   const [message, setMessage] = useState("");
   const [messagesReceived, setMessagesReceived] = useState([]); 
-  const [sentMessages, setSentMessages] = useState([]); // State for sent messages
+  const [sentMessages, setSentMessages] = useState([]);
 
   const [room, setRoom] = useState("");
     const [hasJoinedRoom, setHasJoinedRoom] = useState(false); 
