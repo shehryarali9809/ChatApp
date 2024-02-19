@@ -11,6 +11,13 @@ const io = new Server(server,{
         method:['GET',"POST"]
     }
 })
+const corsOptions = {
+  origin: "https://frontedchatapp.vercel.app",
+  methods: ["GET", "POST"]
+};
+
+app.use(cors(corsOptions));
+
 io.on("connection",(socket)=>{
    console.log(`User Connect:${socket.id}`)
 
@@ -22,6 +29,7 @@ io.on("connection",(socket)=>{
     socket.to(data.room).emit("received_message",data)
   })
 });
-server.listen(3001,()=>{
-    console.log(' Server is running')
-})
+const port = process.env.PORT || 3001;
+server.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
