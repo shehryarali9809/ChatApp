@@ -7,7 +7,7 @@ const { Server } = require('socket.io')
 const server = http.createServer(app)
 const io = new Server(server,{
     cors:{
-        origin: "http://localhost:3000",
+        origin: "https://frontedchatapp.vercel.app/",
         method:['GET',"POST"]
     }
 })
@@ -18,7 +18,7 @@ io.on("connection",(socket)=>{
     socket.join(data)
   })
   socket.on('send_message',(data) =>{
-    console.log("Message received on server:", data); // Add this line to log
+    console.log("Message received on server:", data); 
     socket.to(data.room).emit("received_message",data)
   })
 });
