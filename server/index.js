@@ -3,8 +3,10 @@ const  app = express();
 const http = require('http');
 const cors = require('cors')
 app.use(cors());
-const { Server } = require('socket.io')
-const server = http.createServer(app)
+app.use(express.json());
+
+// const { Server } = require('socket.io')
+// const server = http.createServer(app)
 
 // const io = new Server(server,{
 //     cors:{
@@ -26,6 +28,7 @@ const server = http.createServer(app)
 app.use('/testing', (req, res)=>{
   res.send({data:"response is here"})
 })
-server.listen('https://chat-app-gcdi.vercel.app/',()=>{
-    console.log(' Server is running')
-})
+
+// server.listen('https://chat-app-gcdi.vercel.app/',()=>{
+//     console.log(' Server is running')
+// })
