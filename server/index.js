@@ -22,6 +22,6 @@ io.on("connection",(socket)=>{
     socket.to(data.room).emit("received_message",data)
   })
 });
-server.listen(3001,()=>{
+server.listen('https://chat-app-gcdi.vercel.app/',()=>{
     console.log(' Server is running')
 })

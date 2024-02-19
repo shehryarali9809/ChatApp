@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://vercel.com/shehryars-projects-01ac2e84/chat-app-gcdi/74kR5eJemNpcpzJ5iXtC4s6dmEzN");
 
 function App() {
   const [message, setMessage] = useState("");
